@@ -1,0 +1,39 @@
+
+*{
+margin: 3;
+padding: 3;
+
+}
+body{
+
+
+    background : url("../images/regbc.jpg") ;
+    background-position: 100px -10px;
+padding: 100px 100px;
+margin: 100px;
+background-repeat: no-repeat;
+
+
+}
+
+
+form{
+
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    font-size : 18px;
+    border-radius: 10px;
+    color: #fff;
+
+}
+form-error{
+    color: red;
+}
+form-success{
+    color: green;
+}
+form-inputerror{
+    box-shadow: 0 0 5px red;
+}
+
+
