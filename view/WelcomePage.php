@@ -10,6 +10,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>E-RESTAURANT</title>
+	<link rel="stylesheet" href="../view/css/registresion.css" type="text/css">
 </head>
 <body>
 	<h1> HELLO </h1>

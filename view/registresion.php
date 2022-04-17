@@ -34,6 +34,7 @@
           });
         });
     </script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
 <body>
     <div>
@@ -165,6 +166,8 @@ if (isset($post['create'])){
 			<input type="submit" name="submit" id="submit">
             
 			<br><br>
+            <span id="error_message" class="text-danger"></span>  
+                     <span id="success_message" class="text-success"></span>
 
 		
             
@@ -172,8 +175,45 @@ if (isset($post['create'])){
 		</fieldset>
 		<label>Already have an account?</label><a href="../view/login.php">Login</a>
         <p class = "form-massage"></p>
+
+
 	</form>
  
     
 </body>
 </html>
+<script>  
+ $(document).ready(function(){  
+      $('#submit').click(function(){  
+           var firstname = $('#firstname').val();  
+           var lastname = $('#lastname').val();
+           var gender = $('#gender').val(); 
+           var dob = $('#dob').val();
+           var phone = $('#phone').val();
+           var email = $('#email').val();
+           var username = $('#username').val();
+           var pass = $('#pass').val();
+           var confirmPass = $('#confirmPass').val(); 
+           if(firstname == '' || lastname == '' || gender == '' || dob == '' || phone == '' || email == '' || username == '' || pass == '' ||confirmPass == '')  
+           {  
+                $('#error_message').html("All Fields are required");  
+           }  
+           else  
+           {  
+                $('#error_message').html('');  
+                $.ajax({  
+                     url:"final-project/view/registresion.php",  
+                     method:"POST",  
+                     data:{firstname:firstname, lastname:lastname, gender:gender, dob:dob, phone:phone, email:email, username:username},  
+                     success:function(data){  
+                          $("form1").trigger("reset");  
+                          $('#success_message').fadeIn().html(data);  
+                          setTimeout(function(){  
+                               $('#success_message').fadeOut("Slow");  
+                          }, 200);  
+                     }  
+                });  
+           }  
+      });  
+ });  
+ </script> 

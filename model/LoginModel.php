@@ -54,7 +54,7 @@ class LoginModel
         try {
             //this function will be needing to insert user in login table
             $sql = "insert into login (username,password,) values ('" . $userName . "','" . $pass . "',');";
-            var_dump($sql);
+            //var_dump
             $db =  new DataAccess();
 
             $db->executeQuery($sql);
